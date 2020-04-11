@@ -12,7 +12,10 @@
 Some packaged are needed to install this project,
  *sklearn*
  *numpy*
- *pandas*
+ *pandas.*
+## Project Motivation
+This is a capstone project to graduate from Data Science nano degree from Udacity, the project may help starbucks to know there customer base and to get some business insight from it.
+
 ## Description
 This project is part of my data science nano degree program  by Udacity in collaboration with
 figure eight. The dataset contains labeled data and tweets, messages from real-life disasters.
