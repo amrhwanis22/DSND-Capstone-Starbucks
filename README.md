@@ -4,8 +4,7 @@
 1)    [Installation](#installation)
 2)    [Project Motivation](#Project-Motivation)
 3)    [Description](#Description)
-4)    [File Descriptions](#File-Descriptions)
-6)    [Licensing, Authors, and Acknowledgements](#licensing-authors-and-acknowledgements)
+4)    [Licensing, Authors, and Acknowledgements](#licensing-authors-and-acknowledgements)
 
 ## Installation
  Clone this GIT repository:
@@ -13,7 +12,7 @@
 `
     https://github.com/amrhwanis22/DSND-Capstone-Starbucks.git
 `
-
+then use Starbucks_Capstone_notebook.ipynb to edit code
 ## Project Motivation
 This is a capstone project to graduate from Data Science nano degree from Udacity, the project may help starbucks to know there customer base and to get some business insight from it.
 
@@ -25,10 +24,6 @@ The project is divided in three different sections:
 1. Data Exploring and visualization
 2. Data Processing, ETL pipeline to extract data from sources and to clean it finally save it in csv file
 Machine Learning Pipeline to train model to be able to predict user behavior with offer.
-
-## File Descriptions
-The project conatins the ipynb file and the datasets to run everything.
-
 
 
 ### License:
