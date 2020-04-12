@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4e9f5808-b292-471f-bd00-373bd47c0c70" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1WfZgtBZkPUka6ufItwkp7uy7Ca" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pictures" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\final_project\Pictures" />
+      <recent name="C:\xampp\htdocs\blog\Pictures" />
+      <recent name="C:\xampp\htdocs\blog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\blog\Pictures" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e9f5808-b292-471f-bd00-373bd47c0c70" name="Default Changelist" comment="" />
+      <created>1579542723629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579542723629</updated>
+      <workItem from="1579542725116" duration="20266000" />
+      <workItem from="1579865125246" duration="599000" />
+      <workItem from="1579984147410" duration="528000" />
+      <workItem from="1581338012310" duration="189000" />
+      <workItem from="1585933270318" duration="1629000" />
+      <workItem from="1585953447905" duration="1774000" />
+      <workItem from="1586020414664" duration="1683000" />
+      <workItem from="1586022351663" duration="1871000" />
+      <workItem from="1586031060241" duration="2123000" />
+      <workItem from="1586033224980" duration="2099000" />
+      <workItem from="1586040785439" duration="1217000" />
+      <workItem from="1586042618799" duration="713000" />
+      <workItem from="1586047518266" duration="1742000" />
+      <workItem from="1586049490451" duration="1334000" />
+      <workItem from="1586350451257" duration="1304000" />
+      <workItem from="1586352257294" duration="1087000" />
+      <workItem from="1586365306818" duration="1789000" />
+      <workItem from="1586369121761" duration="1174000" />
+      <workItem from="1586382358722" duration="1638000" />
+      <workItem from="1586387772872" duration="1394000" />
+      <workItem from="1586389805787" duration="600000" />
+      <workItem from="1586390915603" duration="1720000" />
+      <workItem from="1586444851030" duration="2285000" />
+      <workItem from="1586452635896" duration="959000" />
+      <workItem from="1586461663155" duration="1485000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586020618820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586020618820" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1586031678520">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586031678520" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1586461663873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586461663873" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1579551672732">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579551672732" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586050420131">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586050420131" />
+  </component>
+</project>

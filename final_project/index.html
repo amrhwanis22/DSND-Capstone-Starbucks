@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clean Blog - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+
+  <!-- Page Header -->
+
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h3 class="section-heading">Starbucks Capstone Challenge</h3>
+          <img src="Pictures/starbucks.png" width="700" height="700">
+          <br>
+          <br>
+          <h2>Introduction</h2>
+
+          <p>This is the Capstone project to graduate from Udacity Data Science Nano Degree. The given data set, once every few days Starbucks sends out an offer to one of it's users,
+            there are many channels to send an offer, mobile app etc. also some users might not receive any offer during certain weeks,
+            finally there are many types of offers, BOGO (Buy One Get One),
+            Informational as an ad and a Discount offer.</p>
+          <h2>The data set is provided though 3 json files:</h2>
+          <ul>
+            <li><b>Portfolio : </b><br>
+              id (string) : offer id<br>
+              offer_type (string) : type of offer ie BOGO, discount, informational<br>
+              difficulty (int) : minimum required spend to complete an offer<br>
+              reward (int) : reward given for completing an offer<br>
+              duration (int) : time for offer to be open, in days<br>
+              channels (list of strings)<br>
+            </li>
+            <li><b>Profile :</b><br>
+
+              age (int) : age of the customer<br>
+              became_member_on (int) : date when customer created an app account<br>
+              gender (str) : gender of the customer (note some entries contain 'O' for other rather than M or F)<br>
+              id (str) : customer id<br>
+              income (float) : customer's income<br>
+
+            </li>
+            <li><b>Transcript : </b> <br>
+
+              event (str) : record description (ie transaction, offer received, offer viewed, etc.)<br>
+              person (str) : customer id<br>
+              time (int) : time in hours since start of test. The data begins at time t=0<br>
+              value - (dict of strings) : either an offer id or transaction amount depending on the record<br>
+            </li>
+          </ul>
+          <h2>Problem Statement</h2>
+          <p>Starbucks dataset is an amazing dataset to sharpen skills from it and to provide a great business insight from it!</p>
+          <p>The goal from this project is to <b>build 3 predictive models that will help decision maker in offer generation process and to tell if the user will consume and offer or not,</b> in addition  of generating new business insights.</p>
+          <p>.</p>
+          <p><b>Methodology used to solve this problem : </b></p><br>
+          <ul>
+            <li><b>Data Exploration and Visualization</b></li>
+            <li><b>Feature engineering, data cleaning, Pre-processing</b></li>
+            <li><b>Data analysis on cleaned data set</b></li>
+            <li><b>Supervised learning model</b></li>
+            <li><b>Model evaluation</b></li>
+            <li><b>Further enhancements</b></li>
+          </ul>
+          <h2>Metric used for model evaluation</h2>
+          <p><b>I've used accuracy and recall since it's a binary classification problem to tell how model performs on dataset</b></p>
+
+          <h1>Data Exploration and Visualization</h1>
+          <p>This includes data visualization and analyzing, analysis will be made after data cleaning. However let's start view findings</p>
+          <figure>
+            <img src="Pictures/cap_imports_nedded.PNG" alt="Trulli" width="700">
+            <figcaption>Fig.1 - Imports needed.</figcaption>
+          </figure>
+          <p><b>After adding imports needed, we will start data discovery process</b></p>
+          <h3>1-Portfolio Dataset</h3>
+
+          <figure>
+            <img src="Pictures/profile_capstne.PNG" alt="Trulli" width="700">
+            <figcaption>Fig.2 - Portfolio dataset.</figcaption>
+          </figure>
+          <p><b>The portfolio dataset contains 6 columns with 10 rows and no null values</b></p>
+          <br>
+          <h2>2-Profile dataset</h2>
+          <figure>
+            <img src="Pictures/cap_stone_profile.PNG" alt="Trulli" width="700">
+            <figcaption>Fig.3 - Profile dataset.</figcaption>
+          </figure>
+          <p><b>The profile dataset contains 5 columns with 17000 rows and 2175 null in both income and gender columns which are related to each so we will have to remove them.</b></p>
+          <br>
+          <p>Some findings on Profile dataset</p>
+          <figure>
+            <img src="Pictures/gender_cpstne.PNG" alt="Trulli" width="550" height="400">
+            <figcaption>Fig.4 - Total Gender Counts.</figcaption>
+          </figure>
+          <p><b>From here we can conclude that males have more accounts than females but this doesn't mean that they consume same number of offers</b></p>
+          <br>
+          <figure>
+            <img src="Pictures/cap_income.PNG" alt="Trulli" width="550" height="400">
+            <figcaption>Fig.5 - Total Gender income.</figcaption>
+          </figure>
+          <p><b>This plot shows us histogram of income on total gender that we have in our dataset, however we can get some insight, that most of the users there income between 60k and 80k</b></p>
+          <br>
+          <figure>
+            <img src="Pictures/gender_f_capstne.PNG" alt="Trulli" width="550" height="400">
+            <figcaption>Fig.6 - Total Female income.</figcaption>
+          </figure>
+          <p><b>Moreover as we dig more in the dataset we will find that most of females income per year between 50k and 75k </b></p>
+
+          <br>
+          <figure>
+            <img src="Pictures/gender_m_stne.PNG" alt="Trulli" width="550" height="400">
+            <figcaption>Fig.7 - Total Male income.</figcaption>
+          </figure>
+          <p><b>And males income per year between 60k and 80k </b></p>
+          <br>
+          <figure>
+            <img src="Pictures/profile_describe.PNG" alt="Trulli" width="700" height="270">
+            <figcaption>Fig.8 - Profile describtion.</figcaption>
+          </figure>
+          <p><b>In addition of some of data insights tells us the following : </b></p>
+          <ol>
+            <li>Age has max value of 118 years</li>
+            <li>Age has min value of 18 years</li>
+            <li>Max income rate is 120k</li>
+            <li>the become_member_on is a date so we will return to it later in pre-processing</li>
+          </ol>
+          <h2>3- Transcript dataset</h2>
+
+          <br>
+          <figure>
+            <img src="Pictures/TRANSCRIPT_HEAD.PNG" alt="Trulli" width="700" height="200">
+            <figcaption>Fig.9 - Transcript head.</figcaption>
+          </figure>
+          <p><b>Transcript contains 4 columns event in which type of event user received user id time in hours and value if offer id or transaction with amount it depends on use with no null values</b></p>
+          <br>
+          <h1>Feature engineering, data cleaning, Pre-processing</h1>
+          <br>
+          <h3>1- Portfolio</h3>
+          <p><b>first thing is first we will start with portfolio dataset</b></p>
+         <ol>
+          <li>First thing I've done on portfolio is converting duration column from days to hours by multipling by 24 </li>
+          <li>Then I've created MinMaxScaler to keep value ranges normalized</li>
+          <li>Finally I've created three new columns based on each channel</li>
+          <li>last but not least, renaming the id to offer_id to make it more readable</li>
+          <li>Finally created a map between offer_id and integer numbers</li>
+         </ol>
+          <p><b>Here is what the data looks like now</b></p>
+          <figure>
+            <img src="Pictures/duration_to_hur.PNG" alt="Trulli" width="700" height="70">
+            <figcaption>Fig.10 - Converting duration to hours.</figcaption>
+          </figure>
+          <br>
+          <br>
+          <figure>
+            <img src="Pictures/minmax_with_channels.PNG" alt="Trulli" width="700" height="350">
+            <figcaption>Fig.11 - using MinMaxScaler and cleaning channels.</figcaption>
+          </figure>
+          <br>
+          <br>
+          <figure>
+            <img src="Pictures/map_offer_id.PNG" alt="Trulli" width="700" height="200">
+            <figcaption>Fig.12 - Mapping between offer_id and integers.</figcaption>
+          </figure>
+          <br>
+          <br>
+            <figure>
+                <img src="Pictures/porotfolio_cleaned.PNG" alt="Trulli" width="700" height="200">
+                <figcaption>Fig.13 - Portfolio Cleaned.</figcaption>
+            </figure>
+            <br>
+            <br>
+
+          <h3>2- Profile Cleaned</h3>
+          <p>In the profile dataset there were many issues since users don't insert there data in a good manner so we will need to remove bad rows </p>
+            <ol>
+                <li>
+            <p>However the first thing to do is to map every customer id to integer value</p>
+                </li>
+                <li>
+            <p>Apply nan values to users with age 118</p></li>
+                <li>
+            <p><b>Drop this values</b></p>
+                </li>
+                <li>
+            <p><b>Create age bins</b></p>
+                </li>
+                <li>
+            <p>Mapping between bins and integer values for training</p>
+                </li>
+                <li>
+            <p><b>Create income bins</b></p>
+                </li>
+                <li>
+            <p>Mapping between bins and integer values for training</p>
+                </li>
+                <li>
+            <p><b>Encoding gender class </b></p>
+                </li>
+                <li>
+            <p><b>Calculating total number of days user was a member</b></p>
+                </li>
+                <li>
+            <p><b>Creating bins if to tell if the user loyal customer or not based on number of days</b></p>
+                </li>
+                <li>
+            <p>Drop columns that won't be used</p>
+                </li>
+            </ol>
+
+
+
+              <figure>
+                  <img src="Pictures/extract_features_date.PNG" alt="Trulli" width="700" height="200">
+                  <figcaption>Fig.14 - Extract date features.</figcaption>
+              </figure>
+              <br>
+              <br>
+
+              <h4>Final features of profile dataset</h4>
+              <figure>
+                  <img src="Pictures/profile_withut_date.PNG" alt="Trulli" width="700" height="200">
+                  <figcaption>Fig.15 - Profile Cleaned.</figcaption>
+              </figure>
+              <br>
+              <br>
+              <figure>
+                  <img src="Pictures/profile_with_date.PNG" alt="Trulli" width="700" height="200">
+                  <figcaption>Fig.16 - Profile Cleaned.</figcaption>
+              </figure>
+              <br>
+              <br>
+
+            <h3>3- Transcript Cleaned</h3>
+                <p>The Transcript dataset will have some feature engineering as we will need to transform some columns </p>
+                    <p>
+                        <b>1- Mapping between person and cust_id</b>
+                    </p>
+            <figure>
+                <img src="Pictures/trasncript_semi_cleaned.PNG" alt="Trulli" width="700" height="350">
+                <figcaption>Fig.17 - Transcript Cleaned.</figcaption>
+            </figure>
+            <br>
+            <br>
+
+
+            <p> <b>2- Clean keys to get offer_id for each user </b></p>
+
+            <figure>
+                <img src="Pictures/clean_keys.PNG" alt="Trulli" width="400" height="180">
+                <figcaption>Fig.18 - Extract keys from value column.</figcaption>
+            </figure>
+            <br>
+            <br>
+
+            <p><b>
+                   3- pre-process the value feature to extract amount, reward, then remove the transaction, offer_received from event,
+                finally transform event and store it in event_cleaned.
+            </b></p>
+
+            <h3>Prediction Models</h3>
+            <p>
+                I'm going to build 3 prediction models, based on data sets I currently have.
+            </p>
+            <p>
+                1- Model to predict if the user will complete an offer or will just view it.
+            </p>
+            <p>
+                2- Model to predict based on each offer how much the user will be likely to consume this offer.
+            </p>
+            <p>
+                3- Model to predict the average user transaction amount.
+            </p>
+            <br>
+
+            <p><b>First thing to do is to merge the three data sets</b></p>
+            <figure>
+                <img src="Pictures/merging.PNG" alt="Trulli" width="700" height="100">
+                <figcaption>Fig.19 - Merging three data sets.</figcaption>
+            </figure>
+            <p>
+                <b>The second thing is to generate some insights on new data set, also we will calculate how do gender respond to each offer</b>
+            </p>
+
+            <figure>
+                <img src="Pictures/offer_gender.PNG" alt="Trulli" width="700" height="450">
+                <figcaption>Fig.20 - Gender vs Offer Type.</figcaption>
+            </figure>
+            <p><b>From this plot we can say that the most consumed offer in all ages is the BOGO (Buy one get one)</b></p>
+
+            <p><b>Also that top consumer age range between 22 and 34</b></p>
+
+
+            <figure>
+                <img src="Pictures/consuming.PNG" alt="Trulli" width="700" height="200">
+                <figcaption>Fig.21 - Offer View and completing in Male and Female.</figcaption>
+            </figure>
+            <p>The consuming of offers based on males and females that 75% of females complete an offer while in males the ratio drops down to 58%, this is a good indicator that in the future Starbucks should send out more offers to females to increase revenue.</p>
+            <figure>
+                <img src="Pictures/first_model.PNG" alt="Trulli" width="700" height="250">
+                <figcaption>Fig.22 - Training Model.</figcaption>
+            </figure>
+                    <figure>
+                <img src="Pictures/rfacc.PNG" alt="Trulli" width="700" height="200">
+                <figcaption>Fig.23 - Classification Report.</figcaption>
+            </figure>
+            <p>RandomForestClassifier  is selected since it's prevent overfitting and the calculation of the model is good with randomly distributed data points,  The accuracy of the model is very good, which tells us that features extracted has huge impact on model.</p>
+
+            <p>For the second model to predict how user will likely to consume an offer, I've Created a new dataset to calcualte how much user consume an offer the column is named avg_trans,
+            this column is calculated by total_transaction_with_offer of user / num_trans +0.001 if the user has 0 num_trans. also added a new feature tran_off_ratio which is calcualted by  transaction_wit_offer / total_trans+0.001 </p>
+
+
+            
+            <figure>
+                <img src="Pictures/prof_trans_calc.PNG" alt="Trulli" width="700" height="90">
+                <figcaption>Fig.24 - Calculating ratios and avg transactions.</figcaption>
+            </figure>
+            <p>After some data prepration we will need to create a model to classify customer ratio consuming offer, I will use GridSearch with RandomForest to enhance model and get the most out of it</p>
+            <figure>
+                <img src="Pictures/CLASSIFCATION.PNG" alt="Trulli" width="700" height="400">
+                <figcaption>Fig.25 - Model Training.</figcaption>
+            </figure>
+            <p>Here some results on how to fit model on each offer id and it's results.</p>
+             <figure>
+                <img src="Pictures/model_2_with_acc.PNG" alt="Trulli" width="700" height="500">
+                <figcaption>Fig.26 - Model results.</figcaption>
+            </figure>
+            <p>Results from random forest with grid search is impressive as we will need some function to predict the most appropriate offer for the user to consume.</p>
+
+            <figure>
+                <img src="Pictures/customer_preds.PNG" alt="Trulli" width="700" height="300">
+                <figcaption>Fig.27 - Testing model to predict with rows.</figcaption>
+            </figure>
+
+                    <figure>
+                <img src="Pictures/pred_with_cust_id.PNG" alt="Trulli" width="700" height="300">
+                <figcaption>Fig.28 - Testing model to predict with ids.</figcaption>
+            </figure>
+                    <figure>
+                <img src="Pictures/test_preds.PNG" alt="Trulli" width="700" height="150">
+                <figcaption>Fig.29 - Function testing.</figcaption>
+            </figure>
+             
+            <p>This functions are created as helper methods to help us predict the customer top offers to generate for him/her.</p>
+
+            <p>Third and final model is to predict avg user transaction which I will use regression to build the model.</p>
+            
+            <figure>
+                <img src="Pictures/third_model.PNG" alt="Trulli" width="700" height="300">
+                <figcaption>Fig.30 - Regression Model.</figcaption>
+            </figure>
+
+
+            <p><b>Finally we will need to combine the last to models to generate some recommendations for each customer based on his/her records.</b></p>
+
+                     <figure>
+                <img src="Pictures/two_models_combining.PNG" alt="Trulli" width="700" height="500">
+                <figcaption>Fig.31 - Combing two models.</figcaption>
+            </figure>
+                       <figure>
+                <img src="Pictures/model_results_final_preds.PNG" alt="Trulli" width="700" height="250">
+                <figcaption>Fig.32 - Test models combination.</figcaption>
+            </figure>
+            <p>The final result is the prediciton based on each user, which was generted by learning from user interaction with the system.</p>
+
+            <h3>Conclusion</h3>
+            <p>The problem I choose to solve had many chanlleges, the first thing I did to it is a prediciton model weather the user will consume an offer or will just view it. First thing i did is to clean the data sets required. Second combining between data sets to generate merged data set for training. Third using the Random Forest classifier to train on data. Finally using classification_report to generate report on test data to check on model preformance.</p>
+            <h3>Further Enhancements</h3>
+            <ol>
+              <li>The regression model was not very accurate with it's results it may need revisitng by adding new features to the regression model.</li>
+              <li>Forecasting can be used to know the seasonality of the users transaction to imporve company revenue.</li>
+              <li>There is a chance that features like occupation and zone code that can improve model accuracy, also there may be another features realted to offer.</li>
+              <li>There may be a way to enhance my calculating of avg_trans and trans_off_ratio.</li>
+              <li>At this point I can say that I've understood the data very will, I've tried to get the maximum out of it and to enhance the results as much as possible. </li>
+            </ol>
+            
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+
+            <li class="list-inline-item">
+              <a href="https://github.com/amrhwanis22">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Amr Wanis 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
